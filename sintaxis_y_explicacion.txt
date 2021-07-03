@@ -1,0 +1,17 @@
+---------------------------------------------------------------
+//Buscar objetos en la escena
+Para buscar objetos en la escena hay que importar una libreria
+
+#include "Kismet/GameplayStatics.h"
+
+Luego buscamos por clase o por clase con tag.
+importante poner "UGameplayStatics::"
+
+////para buscar actores
+TArray<AActor* > TodosLosAcotres;//declaro variable
+UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), TEXT("objeto"), TodosLosAcotres);//uso variable como parametro
+
+////para buscar un solo actor
+TSubclassOf<class ADatosGlobales> enEscena;//declaro variable
+UGameplayStatics::GetActorOfClass(GetWorld(), enEscena);//uso variable como parametro
+-------------------------------------------------------------
