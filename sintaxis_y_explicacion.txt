@@ -67,3 +67,6 @@ Codigos de VScode
 uprintstring
 GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Red, FString::Printf(TEXT("TEXT")));
 
+uelog
+UE_LOG(LogTemp, Display, TEXT("Your message"));
+
