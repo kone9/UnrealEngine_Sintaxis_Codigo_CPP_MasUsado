@@ -17,3 +17,23 @@ UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), 
 TSubclassOf<class ADatosGlobales> enEscena;//declaro variable
 UGameplayStatics::GetActorOfClass(GetWorld(), enEscena);//uso variable como parametro
 -------------------------------------------------------------
+
+INPUTS
+Tiene que heredar de Pawn, sino hay que activarlo.
+
+tenemos que usar el include
+#include "Components/InputComponent.h"
+
+La función que se usa en .h
+virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+
+// la función que se usa en .Cpp
+void ACar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	
+	PlayerInputComponent->BindAction("derecha", EInputEvent::IE_Pressed, this, &ACar::MoverIzquierda);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
