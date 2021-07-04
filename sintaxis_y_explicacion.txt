@@ -18,11 +18,26 @@ TSubclassOf<class ADatosGlobales> enEscena;//declaro variable
 UGameplayStatics::GetActorOfClass(GetWorld(), enEscena);//uso variable como parametro
 -------------------------------------------------------------
 
+-------------------------------------------------------------
 INPUTS
-Tiene que heredar de Pawn, sino hay que activarlo.
+Tiene que heredar de Pawn, y sino es el player prinncipal hay que activarlo.
+Los inputs tendrian que poder activarse desde cualquier lado
 
 tenemos que usar el include
 #include "Components/InputComponent.h"
+#include "Input.h"
+
+//en begin play
+EnableInput(GetWorld()->GetFirstPlayerController());
+//the enable input used here means i dont have to enable auto receive input in the editor window
+UInputComponent* myInputComp = this->InputComponent;  //InputComponent variable is from AActor.h
+//check that it is valid before calling
+//i.e. not null.  
+if (myInputComp)
+{
+  SetupMyPlayerInputComponent(myInputComp);
+}
+
 
 La función que se usa en .h
 virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -37,3 +52,18 @@ void ACar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+MENSAJE POR PANTALLA.
+if (GEngine)
+	{
+		//Print debug message
+		GEngine->AddOnScreenDebugMessage(-10, 1.f, FColor::Yellow, FString::printf(TEXT("Rotation: %f - %f - %f"), CameraRotation.Pitch, CameraRotation.Yaw, CameraRotation.Roll));
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Codigos de VScode
+
+uprintstring
+GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Red, FString::Printf(TEXT("TEXT")));
+
