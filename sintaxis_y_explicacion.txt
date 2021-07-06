@@ -54,13 +54,7 @@ void ACar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 MENSAJE POR PANTALLA.
-if (GEngine)
-	{
-		//Print debug message
-		GEngine->AddOnScreenDebugMessage(-10, 1.f, FColor::Yellow, FString::printf(TEXT("Rotation: %f - %f - %f"), CameraRotation.Pitch, CameraRotation.Yaw, CameraRotation.Roll));
-	}
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
 
 Codigos de VScode
 
@@ -70,3 +64,20 @@ GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Red, FString::Printf(TEXT("TEXT
 uelog
 UE_LOG(LogTemp, Display, TEXT("Your message"));
 
+int intVar = 5;
+float floatVar = 3.7f;
+FString fstringVar = "an fstring variable";
+UE_LOG(LogTemp, Warning, TEXT("Text, %d %f %s"), intVar, floatVar, *fstringVar );
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+OBTENER EL GAME MODE
+
+incluyo
+#include "Engine/World.h" //incluimos el mundo
+#include "ReglasJuego" //incluimos la clase game mode personal
+
+y en la función beginPlay
+ReglasJuego = Cast<AReglasJuego>(GetWorld()->GetAuthGameMode());
+
+///////////////////////////////////////////////////////////////////////////////
