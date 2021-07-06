@@ -59,11 +59,15 @@ MENSAJE POR PANTALLA.
 Codigos de VScode
 
 uprintstring
+para este incluir.
+#include "Engine/GameEngine.h".
 GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Red, FString::Printf(TEXT("TEXT")));
 
+//mensaje en consola
 uelog
 UE_LOG(LogTemp, Display, TEXT("Your message"));
 
+//diferentes tipos de datos compañados
 int intVar = 5;
 float floatVar = 3.7f;
 FString fstringVar = "an fstring variable";
