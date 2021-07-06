@@ -73,7 +73,11 @@ UE_LOG(LogTemp, Warning, TEXT("Text, %d %f %s"), intVar, floatVar, *fstringVar )
 
 OBTENER EL GAME MODE
 
-incluyo
+en .H declaro el puntero a la clase gamemode con su correspondiente nombre usando forward declaration
+class AReglasJuego* ReglasJuego;//puntero al game mode principal0.
+
+
+incluyo en .CPP
 #include "Engine/World.h" //incluimos el mundo
 #include "ReglasJuego" //incluimos la clase game mode personal
 
