@@ -92,4 +92,16 @@ incluyo en .CPP
 y en la función beginPlay
 ReglasJuego = Cast<AReglasJuego>(GetWorld()->GetAuthGameMode());
 
-///////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+BLUEPRINT COMPONENTE ROOT
+
+en .h
+UPROPERTY(VisibleAnywhere)
+USceneComponent * root; //root de todo el blueprint
+
+en el contructor de .CPP
+root = CreateDefaultSubobject<USceneComponent>(TEXT("CarRoot"));//creo el componente
+
+RootComponent = root;//agrego como root
+
+//////////////////////////////////////////////////////////////////////////////
