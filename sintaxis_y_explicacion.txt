@@ -55,13 +55,17 @@ void ACar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 MENSAJE POR PANTALLA.
 
-
-Codigos de VScode
-
-uprintstring
-para este incluir.
+//Sino funciona incluir.
 #include "Engine/GameEngine.h".
-GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Red, FString::Printf(TEXT("TEXT")));
+
+//se puede hacer un define abajo de las importaciones de las librerias// no funciona
+#define Print(x) if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, TEXT(x) );}//no funciona
+
+Asi se imprimiria concatenando numeros
+Print("Puntaje de gameMode, %f ", ReglasJuego->superVelocidad);
+
+//Sino imprimir directo
+GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, FString::Printf(TEXT("TEXT")));
 
 //mensaje en consola
 uelog
