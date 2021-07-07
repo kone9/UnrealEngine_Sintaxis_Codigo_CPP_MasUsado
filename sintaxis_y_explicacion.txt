@@ -115,8 +115,8 @@ RootComponent = root;//agrego como root
 LEVEL SEQUENSE para animaciones
 
 Incluir en .Cpp
-#include "LevelSequence.h"
-#include "LevelSequencePlayer.h"
+#include "LevelSequence.h"//no funciona
+#include "LevelSequencePlayer.h"//no funciona
 
 en .h
 UPROPERTY(EditAnywhere) ULevelSequence* SequenceAsset;
