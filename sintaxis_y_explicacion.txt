@@ -105,3 +105,13 @@ root = CreateDefaultSubobject<USceneComponent>(TEXT("CarRoot"));//creo el compon
 RootComponent = root;//agrego como root
 
 //////////////////////////////////////////////////////////////////////////////
+
+LEVEL SEQUENSE para animaciones
+
+en .h
+UPROPERTY(VisibleAnywhere) class ULevelSequence*  GameOverAnimation; //para buscar los que estan en la escena
+
+en .Cpp 
+incluyo para trabajar con el level sequence
+#include "LevelSequence.h"
+/////////////////////////////////////////////////////////////////////////////
