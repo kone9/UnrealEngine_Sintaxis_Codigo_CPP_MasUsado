@@ -1,4 +1,6 @@
----------------------------------------------------------------
+-------------------------------------------------------------
+
+-------------------------------------------------------------
 //BUSCAR OBJETOS EN LA ESCENA
 Buscar actores cuando el juego se ejecuta es algo fundamental, pero bastante lento asi que usar con precaucion,
 para buscar objetos en la escena hay que importar una libreria
