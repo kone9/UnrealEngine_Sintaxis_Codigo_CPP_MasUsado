@@ -112,7 +112,7 @@ RootComponent = root;//agrego como root
 -------------------------------------------------------------
 
 -------------------------------------------------------------
-LEVEL SEQUENSE para animaciones
+LEVEL SEQUENSE para animaciones NO FUNCIONA TIENE BUG
 
 Incluir en .Cpp
 #include "LevelSequence.h"//no funciona
