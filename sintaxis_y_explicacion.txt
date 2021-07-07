@@ -51,8 +51,9 @@ void ACar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAction("derecha", EInputEvent::IE_Pressed, this, &ACar::MoverIzquierda);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+-------------------------------------------------------------
 
+-------------------------------------------------------------
 MENSAJE POR PANTALLA.
 
 //Sino funciona incluir.
@@ -76,9 +77,9 @@ int intVar = 5;
 float floatVar = 3.7f;
 FString fstringVar = "an fstring variable";
 UE_LOG(LogTemp, Warning, TEXT("Text, %d %f %s"), intVar, floatVar, *fstringVar );
+-------------------------------------------------------------
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
+-------------------------------------------------------------
 OBTENER EL GAME MODE
 
 en .H declaro el puntero a la clase gamemode con su correspondiente nombre usando forward declaration
@@ -92,7 +93,9 @@ incluyo en .CPP
 y en la función beginPlay
 ReglasJuego = Cast<AReglasJuego>(GetWorld()->GetAuthGameMode());
 
-/////////////////////////////////////////////////////////////////////////////
+-------------------------------------------------------------
+
+-------------------------------------------------------------
 BLUEPRINT COMPONENTE ROOT
 
 en .h
@@ -104,14 +107,23 @@ root = CreateDefaultSubobject<USceneComponent>(TEXT("CarRoot"));//creo el compon
 
 RootComponent = root;//agrego como root
 
-//////////////////////////////////////////////////////////////////////////////
+-------------------------------------------------------------
 
+-------------------------------------------------------------
 LEVEL SEQUENSE para animaciones
 
-en .h
-UPROPERTY(VisibleAnywhere) class ULevelSequence*  GameOverAnimation; //para buscar los que estan en la escena
-
-en .Cpp 
-incluyo para trabajar con el level sequence
+Incluir en .Cpp
 #include "LevelSequence.h"
-/////////////////////////////////////////////////////////////////////////////
+#include "LevelSequencePlayer.h"
+
+en .h
+UPROPERTY(EditAnywhere) ULevelSequence* SequenceAsset;
+UPROPERTY() ULevelSequencePlayer* SequencePlayer;
+
+en .CPP
+ALevelSequenceActor* OutActor = nullptr;
+SequencePlayer = ULevelSequencePlayer::CreateLevelSequencePlayer(GetWorld(), SequenceAsset, FMovieSceneSequencePlaybackSettings(), OutActor);
+
+-------------------------------------------------------------
+
+-------------------------------------------------------------
