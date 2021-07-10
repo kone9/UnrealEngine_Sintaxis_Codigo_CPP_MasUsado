@@ -1,3 +1,8 @@
+Atajos de teclado importantes:
+
+alt+ click izquierdo: rotar sobre un objeto.
+F: apuntar un objeto
+
 -------------------------------------------------------------
 
 -------------------------------------------------------------
