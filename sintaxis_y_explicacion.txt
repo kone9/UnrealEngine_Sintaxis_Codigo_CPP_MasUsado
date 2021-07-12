@@ -3,6 +3,7 @@ Atajos de teclado importantes:
 alt+ click izquierdo: rotar sobre un objeto. // CONFIGURARLO COMO BLENDER3D Usando rueda del medio del mouse
 F: apuntar un objeto // CONFiGURARLO COMO BLENDER USANDO "."
 
+
 -------------------------------------------------------------
 
 -------------------------------------------------------------
@@ -176,3 +177,17 @@ void NombreCLase::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Ot
 -------------------------------------------------------------
 
 ------------------------------------------------------------
+
+//LLAMAR A BLUEPRINT DESDE EDITOR
+
+UPROPERTY(BlueprintReadOnly) variable
+UPROPERTY(BlueprintReadWrite) variable
+UPROPERTY(EditAnywhere) variable
+UPROPERTY(VisibleAnywhere) variable
+
+
+-------------------------------------------------------------
+
+------------------------------------------------------------
+
+
