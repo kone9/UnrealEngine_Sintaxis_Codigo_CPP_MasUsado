@@ -197,4 +197,26 @@ UPROPERTY(VisibleAnywhere) variable
 
 ------------------------------------------------------------
 
+CREAR UN TIMER
 
+En .h
+FTimerHandle timer;
+UPROPERTY(EditAnywhere) float DelayTime;
+UPROPERTY(EditAnywhere) bool bLoop;
+void TimerFuncion();
+
+En .cpp
+#include "TimerManager.h"
+
+GetWorldTimerManager().SetTimer(timer, this, &Class::TimerFuncion, DelayTime, bLoop);
+
+void TimerFuncion()
+{
+
+}
+
+
+
+-------------------------------------------------------------
+
+------------------------------------------------------------
