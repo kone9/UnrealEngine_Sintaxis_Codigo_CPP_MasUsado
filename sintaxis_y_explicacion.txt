@@ -18,12 +18,19 @@ Luego buscamos por clase o por clase con tag.
 importante poner "UGameplayStatics::"
 
 ////para buscar de actores que estan en la escena con tag
+
 TArray<AActor* > TodosLosAcotres;//declaro variable
 UGameplayStatics::GetAllActorsOfClassWithTag(GetWorld(), AActor::StaticClass(), TEXT("objeto"), TodosLosAcotres);//uso variable como parametro
 
+
 ////para buscar un solo actor por clase
+class ADatosGlobales* datosEncontrados; 
 TSubclassOf<class ADatosGlobales> enEscena;//declaro variable
-UGameplayStatics::GetActorOfClass(GetWorld(), enEscena);//uso variable como parametro
+datosEncontrados = UGameplayStatics::GetActorOfClass(GetWorld(), enEscena);//uso variable como parametro
+
+
+//para buscar uno solo de otra forma usando como parametro nombre de la clase con ADatosGlobalesACar::StaticClass
+class ADatosGlobales* datosEncontrados = UGameplayStatics::GetActorOfClass(GetWorld(), ADatosGlobalesACar::StaticClass() ); 
 -------------------------------------------------------------
 
 -------------------------------------------------------------
