@@ -220,3 +220,18 @@ void TimerFuncion()
 -------------------------------------------------------------
 
 ------------------------------------------------------------
+
+CREAR UNA ENUMERACION.
+ARRIBA DE LA CLASE ESCRIBIMOS.
+
+ UENUM(BlueprintType, Category = "TipoDeCuenta")
+ enum class TipoDeCuenta : uint8
+ {
+	SUMA             UMETA(DisplayName = "SUMA"),
+	RESTA            UMETA(DisplayName = "RESTA"),
+	MULTIPLICACION   UMETA(DisplayName = "MULTIPLICACION"),
+	DIVISION         UMETA(DisplayName = "DIVISION")
+ }
+
+Luego podemos crear la variable de este tipo desde cualquier lado de la clase.
+TipoDeCuenta pruebaEnum = TipoDeCuenta::SUMA;
